@@ -13,6 +13,6 @@ function isEmpty(){
     return size() === 0
 }
 function size(){
-    return stack.length 
+    return stack.length
 }
 export {push, pop, peek, isEmpty, size, stack}

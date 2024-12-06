@@ -1,0 +1,50 @@
+import {Stack } from './stack.js'
+
+const s = new Stack()
+
+const buttonPush = document.querySelector("#buttonPush");
+const buttonPop = document.querySelector("#buttonPop");
+const buttonPeek = document.querySelector("#buttonPeek");
+const buttonSize = document.querySelector("#buttonSize");
+const buttonIsEmpty = document.querySelector("#buttonIsEmpty");
+
+buttonPush.addEventListener("click", () => pushValue());
+buttonPop.addEventListener("click", () => popValue());
+buttonPeek.addEventListener("click", () => peekValue());
+buttonSize.addEventListener("click", () => sizeValue());
+buttonIsEmpty.addEventListener("click", () => isEmptyValue());
+
+// Push
+function pushValue() {
+    let valor = document.getElementById("elemento").value;
+    if (valor) {
+        s.push(valor);
+        updateMeuArray();
+    }
+}
+
+// Pop
+function popValue() {
+    s.pop();
+    updateMeuArray();
+}
+
+// Peek
+function peekValue() {
+    alert(`Topo da pilha: ${s.peek()}`);
+}
+
+// Size
+function sizeValue() {
+    alert(`Tamanho da pilha: ${s.size()}`);
+}
+
+// IsEmpty
+function isEmptyValue() {
+    alert(`IsEmpty: ${s.isEmpty()}`);
+}
+
+
+function updateMeuArray() {
+    document.getElementById("meuArray").innerHTML = s.stack.join(" <> ")
+}
