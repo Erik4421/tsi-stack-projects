@@ -3,14 +3,14 @@ import { push, pop, peek, size, clear, stack, isEmpty } from './stack.js';
 
 // Botão para validar a expressão
 const buttonValidate = document.querySelector("#buttonValidate");
-buttonValidate.addEventListener("click", () => validar());
+buttonValidate.addEventListener("click", () => validar()); 
 
 // Função de validação da expressão
 function validar() {
     const valor = document.getElementById("elemento").value;
     const isValid = isBalanced(valor);
     const validacao = document.getElementById("validacao");
-    console.log(size())
+    clear()
 
     console.log(isValid)
     if (isValid) {
@@ -31,7 +31,7 @@ function isBalanced(valor) {
 
     };
 
-    clear()
+    // clear()
     for (let char of valor) {
         if (abertos.includes(char)) {
             push(char);
@@ -43,6 +43,7 @@ function isBalanced(valor) {
                 return false;
             }
             pop()
+            
         }
     }
 

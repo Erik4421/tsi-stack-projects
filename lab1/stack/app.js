@@ -44,5 +44,9 @@ function isEmptyValue() {
 
 
 function updateMeuArray() {
-    document.getElementById("meuArray").innerHTML = stack.join(" <> ")
+    document.getElementById("meuArray").innerHTML = ""
+    for (const i of stack) {
+        document.getElementById("meuArray").innerHTML += `<div class="valor_array p-5">${i}</div>`
+    }
+    
 }

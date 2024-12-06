@@ -43,7 +43,7 @@ function updateMeuArray() {
     let temp = stack.top
     document.getElementById("meuArray").innerHTML = "";
     while (temp != null) {
-        document.getElementById("meuArray").innerHTML += temp.value
+        document.getElementById("meuArray").innerHTML += `<div class="valor_array p-5">${temp.value}</div>`
         temp = temp.prev
     }
 }
